@@ -5,12 +5,16 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func BlogRouter(r *gin.Engine){
+func BlogRouter(r *gin.Engine) {
 	r.POST("/registeruser", api.RegisterUser)
-	r.POST("/login")
+	r.POST("/login", api.Login)
 	r.POST("/verify")
-	r.GET("/refresh")
-	r.GET("/user/:name")
+
+	user := r.Group("/user")
+	{
+		user.GET("/:name")
+
+
+	}
 
 }
-

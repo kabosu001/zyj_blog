@@ -12,6 +12,7 @@ import (
 func main()  {
 	r := gin.Default()
 	router.BlogRouter(r)
+
 	r.Run()
 	
 }
